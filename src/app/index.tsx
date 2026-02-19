@@ -15,9 +15,9 @@ import { useScoredRoutes } from "@/hooks/use-scored-routes";
 import type { SortMode } from "@/types/route";
 
 const SORT_OPTIONS: { mode: SortMode; label: string }[] = [
-  { mode: "best", label: "Best Conditions" },
-  { mode: "easiest", label: "Easiest" },
-  { mode: "shortest", label: "Shortest" },
+  { mode: "best", label: "🔥 Best" },
+  { mode: "easiest", label: "😎 Easiest" },
+  { mode: "shortest", label: "⚡ Shortest" },
 ];
 
 export default function IndexScreen() {
@@ -65,46 +65,45 @@ export default function IndexScreen() {
       </View>
 
       {/* Sticky sort bar */}
-      <View
-        style={{
-          flexDirection: "row",
-          gap: 8,
-          paddingHorizontal: 0,
-          paddingVertical: 12,
-          backgroundColor: '#0A0A0F',
-        }}
-      >
-        {SORT_OPTIONS.map(({ mode, label }) => (
-          <Pressable
-            key={mode}
-            onPress={() => setSortMode(mode)}
-            style={{
-              flex: 1,
-              paddingVertical: 7,
-              paddingHorizontal: 4,
-              borderRadius: 10,
-              alignItems: "center",
-              backgroundColor:
-                sortMode === mode
-                  ? (AC.systemBlue as unknown as string)
-                  : '#1C1C1E',
-            }}
-          >
-            <Text
+      <View style={{ backgroundColor: '#0A0A0F', paddingVertical: 12 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            gap: 8,
+          }}
+        >
+          {SORT_OPTIONS.map(({ mode, label }) => (
+            <Pressable
+              key={mode}
+              onPress={() => setSortMode(mode)}
               style={{
-                fontSize: 12,
-                fontWeight: "600",
-                color:
+                flex: 1,
+                paddingVertical: 12,
+                paddingHorizontal: 12,
+                borderRadius: 12,
+                alignItems: "center",
+                backgroundColor:
                   sortMode === mode
-                    ? "white"
-                    : 'rgba(235,235,245,0.6)',
+                    ? (AC.systemBlue as unknown as string)
+                    : '#1C1C1E',
               }}
-              numberOfLines={1}
             >
-              {label}
-            </Text>
-          </Pressable>
-        ))}
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontWeight: "600",
+                  color:
+                    sortMode === mode
+                      ? "white"
+                      : 'rgba(235,235,245,0.6)',
+                }}
+                numberOfLines={1}
+              >
+                {label}
+              </Text>
+            </Pressable>
+          ))}
+        </View>
       </View>
 
       {/* Route list */}
