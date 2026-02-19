@@ -47,7 +47,7 @@ export function WeatherBanner({ weather }: Props) {
 
         <View style={{ alignItems: 'center', gap: 4 }}>
           <ConditionsScore score={conditionsScore} size={72} />
-          <Text style={{ fontSize: 10, color: 'rgba(255,255,255,0.55)', textAlign: 'center', maxWidth: 72 }}>
+          <Text style={{ fontSize: 13, fontWeight: '600', color: 'rgba(255,255,255,0.9)', textAlign: 'center', maxWidth: 72 }}>
             Cycling Score
           </Text>
         </View>
