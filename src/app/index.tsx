@@ -75,6 +75,7 @@ export default function IndexScreen() {
           {SORT_OPTIONS.map(({ mode, label }) => (
             <Pressable
               key={mode}
+              testID={`sort-button-${mode}`}
               onPress={() => setSortMode(mode)}
               style={{
                 flex: 1,
@@ -121,8 +122,8 @@ export default function IndexScreen() {
         >
           {sortedRoutes.length} routes · New York City
         </Text>
-        {sortedRoutes.map((route) => (
-          <RouteCard key={route.id} route={route} />
+        {sortedRoutes.map((route, index) => (
+          <RouteCard key={route.id} route={route} testID={`route-card-${index}`} />
         ))}
       </View>
     </ScrollView>

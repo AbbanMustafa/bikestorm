@@ -13,15 +13,17 @@ const DIFFICULTY_STYLES: Record<string, { bg: string; text: string }> = {
 
 interface Props {
   route: ScoredRoute;
+  testID?: string;
 }
 
-export function RouteCard({ route }: Props) {
+export function RouteCard({ route, testID }: Props) {
   const diff = DIFFICULTY_STYLES[route.difficulty];
   const scoreColor = getScoreColor(route.weatherSuitabilityScore);
 
   return (
     <Link href={`/${route.id}`} asChild>
       <Pressable
+        testID={testID}
         style={({ pressed }) => ({
           backgroundColor: '#1C1C1E',
           borderRadius: 16,
