@@ -9,7 +9,8 @@
     },
     "android": {
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.mustafaexpo.bikestorm"
     },
     "experiments": {
       "reactCompiler": true
