@@ -23,7 +23,7 @@ export default function RouteDetailScreen() {
   if (!bikeRoute) {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ color: AC.secondaryLabel as unknown as string }}>Route not found.</Text>
+        <Text style={{ color: 'rgba(235,235,245,0.6)' }}>Route not found.</Text>
       </View>
     );
   }
@@ -36,7 +36,7 @@ export default function RouteDetailScreen() {
     <>
       <Stack.Screen options={{ title: bikeRoute.name }} />
       <ScrollView
-        style={{ flex: 1, backgroundColor: AC.systemGroupedBackground as unknown as string }}
+        style={{ flex: 1, backgroundColor: '#0A0A0F' }}
         contentInsetAdjustmentBehavior="automatic"
       >
         {/* Map */}
@@ -47,16 +47,16 @@ export default function RouteDetailScreen() {
           {/* Title + score */}
           <View style={{ flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
             <View style={{ flex: 1, gap: 4 }}>
-              <Text style={{ fontSize: 22, fontWeight: "700", color: AC.label as unknown as string }}>
+              <Text style={{ fontSize: 22, fontWeight: "700", color: '#FFFFFF' }}>
                 {bikeRoute.name}
               </Text>
-              <Text style={{ fontSize: 14, color: AC.secondaryLabel as unknown as string }}>
+              <Text style={{ fontSize: 14, color: 'rgba(235,235,245,0.6)' }}>
                 {bikeRoute.neighborhood}
               </Text>
             </View>
             <View style={{ alignItems: "center", gap: 4 }}>
               <ConditionsScore score={scored.weatherSuitabilityScore} size={64} />
-              <Text style={{ fontSize: 11, color: AC.secondaryLabel as unknown as string }}>
+              <Text style={{ fontSize: 11, color: 'rgba(235,235,245,0.6)' }}>
                 Conditions
               </Text>
             </View>
@@ -69,14 +69,14 @@ export default function RouteDetailScreen() {
                 {bikeRoute.difficulty}
               </Text>
             </View>
-            <View style={{ backgroundColor: AC.secondarySystemBackground as unknown as string, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5 }}>
-              <Text style={{ fontSize: 13, fontWeight: "600", color: AC.label as unknown as string }}>
+            <View style={{ backgroundColor: '#1C1C1E', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5 }}>
+              <Text style={{ fontSize: 13, fontWeight: "600", color: '#FFFFFF' }}>
                 {bikeRoute.distanceMiles} miles
               </Text>
             </View>
-            <View style={{ backgroundColor: AC.secondarySystemBackground as unknown as string, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5, flexDirection: "row", alignItems: "center", gap: 5 }}>
+            <View style={{ backgroundColor: '#1C1C1E', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5, flexDirection: "row", alignItems: "center", gap: 5 }}>
               <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: scoreColor }} />
-              <Text style={{ fontSize: 13, fontWeight: "600", color: AC.label as unknown as string }}>
+              <Text style={{ fontSize: 13, fontWeight: "600", color: '#FFFFFF' }}>
                 {scored.suitabilityLabel} conditions
               </Text>
             </View>
@@ -85,13 +85,13 @@ export default function RouteDetailScreen() {
           {/* Description card */}
           <View
             style={{
-              backgroundColor: AC.secondarySystemBackground as unknown as string,
+              backgroundColor: '#1C1C1E',
               borderRadius: 14,
               padding: 16,
               borderCurve: "continuous",
             }}
           >
-            <Text style={{ fontSize: 15, color: AC.label as unknown as string, lineHeight: 22 }}>
+            <Text style={{ fontSize: 15, color: '#FFFFFF', lineHeight: 22 }}>
               {bikeRoute.description}
             </Text>
           </View>
@@ -99,7 +99,7 @@ export default function RouteDetailScreen() {
           {/* Route stats card */}
           <View
             style={{
-              backgroundColor: AC.secondarySystemBackground as unknown as string,
+              backgroundColor: '#1C1C1E',
               borderRadius: 14,
               overflow: "hidden",
               borderCurve: "continuous",
@@ -133,7 +133,7 @@ export default function RouteDetailScreen() {
                     : "rgba(255,59,48,0.3)",
               }}
             >
-              <Text style={{ fontSize: 13, color: AC.label as unknown as string, lineHeight: 20 }}>
+              <Text style={{ fontSize: 13, color: '#FFFFFF', lineHeight: 20 }}>
                 {scored.weatherSuitabilityScore >= 80
                   ? `✅ Great conditions! ${weather.temperature}°F, ${weather.label.toLowerCase()} with ${weather.windSpeed} mph winds. This route is highly recommended right now.`
                   : scored.weatherSuitabilityScore >= 50
@@ -158,13 +158,13 @@ function StatRow({ label, value, showBorder }: { label: string; value: string; s
         paddingHorizontal: 16,
         paddingVertical: 12,
         borderBottomWidth: showBorder ? 0.5 : 0,
-        borderBottomColor: AC.separator as unknown as string,
+        borderBottomColor: 'rgba(84,84,88,0.65)',
       }}
     >
-      <Text style={{ fontSize: 15, color: AC.secondaryLabel as unknown as string }}>
+      <Text style={{ fontSize: 15, color: 'rgba(235,235,245,0.6)' }}>
         {label}
       </Text>
-      <Text style={{ fontSize: 15, fontWeight: "500", color: AC.label as unknown as string }}>
+      <Text style={{ fontSize: 15, fontWeight: "500", color: '#FFFFFF' }}>
         {value}
       </Text>
     </View>

@@ -3,7 +3,7 @@
     "icon": "https://agent.expo.app/static/icon.png",
     "orientation": "default",
     "scheme": "acme",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "dark",
     "web": {
       "output": "server"
     },
@@ -22,6 +22,18 @@
       "@bacons/apple-colors"
     ],
     "name": "bikestorm",
-    "owner": "mustafaexpo"
+    "owner": "mustafaexpo",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c16a6c9b-7848-4dfc-95be-ad425344bf2a"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.mustafaexpo.bikestorm",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    }
   }
 }

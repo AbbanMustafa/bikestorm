@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider";
-import { Stack } from "expo-router";
+import { Stack, router } from "expo-router";
 import * as AC from "@bacons/apple-colors";
+import { Pressable, Text } from "react-native";
 
 export default function Layout() {
   return (
@@ -19,12 +20,19 @@ export default function Layout() {
           options={{
             headerBackTitle: "Routes",
             headerStyle: {
-              backgroundColor: AC.systemBackground as unknown as string,
+              backgroundColor: '#0A0A0F',
             },
             headerTitleStyle: {
-              color: AC.label as unknown as string,
+              color: '#FFFFFF',
             },
             headerTintColor: AC.systemBlue as unknown as string,
+            headerLeft: () => (
+              <Pressable testID="back-button" onPress={() => router.back()}>
+                <Text style={{ color: AC.systemBlue as unknown as string, fontSize: 17 }}>
+                  {"‹ Routes"}
+                </Text>
+              </Pressable>
+            ),
           }}
         />
       </Stack>

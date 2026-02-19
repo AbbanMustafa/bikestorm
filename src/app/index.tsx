@@ -27,8 +27,8 @@ export default function IndexScreen() {
 
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: AC.systemGroupedBackground as unknown as string }}
-      contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}
+      style={{ flex: 1, backgroundColor: '#0A0A0F' }}
+      contentContainerStyle={{ paddingBottom: insets.bottom + 20, paddingHorizontal: 16 }}
       refreshControl={
         <RefreshControl refreshing={loading} onRefresh={refetch} tintColor="white" />
       }
@@ -69,9 +69,9 @@ export default function IndexScreen() {
         style={{
           flexDirection: "row",
           gap: 8,
-          paddingHorizontal: 16,
+          paddingHorizontal: 0,
           paddingVertical: 12,
-          backgroundColor: AC.systemGroupedBackground as unknown as string,
+          backgroundColor: '#0A0A0F',
         }}
       >
         {SORT_OPTIONS.map(({ mode, label }) => (
@@ -87,7 +87,7 @@ export default function IndexScreen() {
               backgroundColor:
                 sortMode === mode
                   ? (AC.systemBlue as unknown as string)
-                  : (AC.secondarySystemBackground as unknown as string),
+                  : '#1C1C1E',
             }}
           >
             <Text
@@ -97,7 +97,7 @@ export default function IndexScreen() {
                 color:
                   sortMode === mode
                     ? "white"
-                    : (AC.secondaryLabel as unknown as string),
+                    : 'rgba(235,235,245,0.6)',
               }}
               numberOfLines={1}
             >
@@ -113,8 +113,8 @@ export default function IndexScreen() {
           style={{
             fontSize: 13,
             fontWeight: "600",
-            color: AC.secondaryLabel as unknown as string,
-            paddingHorizontal: 20,
+            color: 'rgba(235,235,245,0.6)',
+            paddingHorizontal: 4,
             paddingBottom: 8,
             textTransform: "uppercase",
             letterSpacing: 0.5,

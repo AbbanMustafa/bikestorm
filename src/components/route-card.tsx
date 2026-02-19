@@ -23,15 +23,16 @@ export function RouteCard({ route }: Props) {
     <Link href={`/${route.id}`} asChild>
       <Pressable
         style={({ pressed }) => ({
-          backgroundColor: AC.secondarySystemBackground as unknown as string,
+          backgroundColor: '#1C1C1E',
           borderRadius: 16,
+          borderWidth: 1,
+          borderColor: 'rgba(255,255,255,0.1)',
           padding: 16,
-          marginHorizontal: 16,
-          marginBottom: 12,
+          marginHorizontal: 0,
+          marginBottom: 28,
           gap: 10,
           opacity: pressed ? 0.85 : 1,
           transform: [{ scale: pressed ? 0.99 : 1 }],
-          boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
           borderCurve: 'continuous',
         })}
       >
@@ -42,13 +43,13 @@ export function RouteCard({ route }: Props) {
               style={{
                 fontSize: 16,
                 fontWeight: '700',
-                color: AC.label as unknown as string,
+                color: '#FFFFFF',
               }}
               numberOfLines={1}
             >
               {route.name}
             </Text>
-            <Text style={{ fontSize: 13, color: AC.secondaryLabel as unknown as string }}>
+            <Text style={{ fontSize: 13, color: 'rgba(235,235,245,0.6)' }}>
               {route.neighborhood}
             </Text>
           </View>
@@ -57,7 +58,7 @@ export function RouteCard({ route }: Props) {
 
         {/* Description */}
         <Text
-          style={{ fontSize: 14, color: AC.secondaryLabel as unknown as string, lineHeight: 20 }}
+          style={{ fontSize: 14, color: 'rgba(235,235,245,0.6)', lineHeight: 20 }}
           numberOfLines={2}
         >
           {route.description}
@@ -71,16 +72,16 @@ export function RouteCard({ route }: Props) {
           </View>
 
           {/* Distance */}
-          <Text style={{ fontSize: 13, color: AC.secondaryLabel as unknown as string }}>
+          <Text style={{ fontSize: 13, color: 'rgba(235,235,245,0.6)' }}>
             {route.distanceMiles} mi
           </Text>
 
           {/* Dot separator */}
-          <View style={{ width: 4, height: 4, borderRadius: 2, backgroundColor: AC.tertiaryLabel as unknown as string }} />
+          <View style={{ width: 4, height: 4, borderRadius: 2, backgroundColor: 'rgba(235,235,245,0.3)' }} />
 
           {/* Suitability dot + label */}
           <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: scoreColor }} />
-          <Text style={{ fontSize: 13, color: AC.secondaryLabel as unknown as string }}>
+          <Text style={{ fontSize: 13, color: 'rgba(235,235,245,0.6)' }}>
             {route.suitabilityLabel} conditions
           </Text>
         </View>
