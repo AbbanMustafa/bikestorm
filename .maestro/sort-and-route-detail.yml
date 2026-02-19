@@ -1,0 +1,41 @@
+appId: com.mustafaexpo.bikestorm
+---
+# Verify home screen loads with default "Best" sort
+- launchApp
+- assertVisible: '.*Best.*'
+- assertVisible: '.*ROUTES.*NEW YORK CITY.*'
+
+# Tap "Easiest" sort and verify it activates
+- tapOn:
+    id: 'sort-button-easiest'
+- assertVisible: '.*Easiest.*'
+
+# Tap "Shortest" sort and verify shortest route appears first
+- tapOn:
+    id: 'sort-button-shortest'
+- assertVisible: '.*Shortest.*'
+- assertVisible:
+    id: 'route-card-0'
+
+# Tap back to "Best" sort
+- tapOn:
+    id: 'sort-button-best'
+- assertVisible: '.*Best.*'
+
+# Tap first route card to open detail page
+- tapOn:
+    id: 'route-card-0'
+
+# Verify route detail page shows map and route info
+- assertVisible: 'Routes'
+- assertVisible: '.*miles.*'
+- assertVisible: '.*Conditions.*'
+
+# Go back to home page
+- tapOn:
+    id: 'back-button'
+
+# Verify we're back on the home screen
+- assertVisible: '.*ROUTES.*NEW YORK CITY.*'
+- assertVisible:
+    id: 'route-card-0'
