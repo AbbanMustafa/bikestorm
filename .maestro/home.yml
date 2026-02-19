@@ -1,0 +1,5 @@
+appId: com.mustafaexpo.bikestorm
+---
+- launchApp
+- assertVisible: 'Best Conditions'
+- assertVisible: 'routes · New York City'

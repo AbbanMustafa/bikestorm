@@ -1,0 +1,21 @@
+name: iOS Build & E2E Tests
+
+on:
+  pull_request:
+    branches: ['*']
+
+jobs:
+  build_ios:
+    name: Build iOS for E2E
+    type: build
+    params:
+      platform: ios
+      profile: e2e-test
+
+  maestro_test:
+    name: Run E2E Tests
+    needs: [build_ios]
+    type: maestro
+    params:
+      build_id: ${{ needs.build_ios.outputs.build_id }}
+      flow_path: .maestro/
